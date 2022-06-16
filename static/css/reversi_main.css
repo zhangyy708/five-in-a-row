@@ -1,0 +1,193 @@
+/* overall setting */
+body {
+    background-color: #2d2d2d;
+    color: white;
+    font-size: 20px;
+}
+
+h1 { /*BIG title (e.g., "Mancala", "Reversi")*/
+    font-size: 50px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 0%;
+    padding-bottom: 0%;
+    font-size: 30px;
+    text-align: center;
+}
+
+#who_wins {
+    margin-top: 10%;
+    font-size: 30px;
+    text-align: center;
+}
+
+#results {
+    margin-top: 10%;
+}
+
+p {
+    text-align: center;
+}
+
+#top {
+    margin-top: 5%;
+    height: 15%;
+}
+
+#stage {
+    height: 50%;
+}
+
+#bottom {
+    height: 15%;
+}
+
+/* welcome page */
+#welcome_buttons_en {
+    margin-top: 10%;
+}
+
+#welcome_buttons_cn {
+    margin-top: 10%;
+}
+
+/* options page */
+#options_ai {
+    margin-top: 10%;
+}
+
+#ai_on {
+    transition-duration: 0s;
+}
+
+#ai_on:hover {
+    background-color: #2d2d2d;
+    color: white;
+}
+
+#ai_off_en {
+    /* background-color: white;
+    color: #2d2d2d; */
+    transition-duration: 0s;
+}
+
+#ai_off_cn {
+    /* background-color: white;
+    color: #2d2d2d; */
+    transition-duration: 0s;
+}
+
+#options_lan {
+    margin-top: 5%;
+}
+
+#en {
+    transition-duration: 0s;
+}
+
+#cn {
+    transition-duration: 0s;
+}
+
+#cn:hover {
+    background-color: #2d2d2d;
+    color: white;
+}
+
+/* rules page */
+li {
+    text-align: left;
+    font-size: 16px;
+}
+
+#ref_en p {
+    text-align: left;
+    font-size: 16px;
+}
+
+#ref_cn p {
+    text-align: left;
+    font-size: 16px;
+}
+
+/* game page */
+#game_ground {
+    height: 480px;
+}
+#game_ground .column {
+    width: 60px;
+    margin: 0px;
+}
+
+/* background cells */
+.ele {
+    background-color: #2d2d2d;
+    color: #ffffff;
+    border: solid 2px #ffffff;
+    cursor: pointer;
+    transition-duration: 0s;
+    vertical-align: middle;
+    text-align: center;
+    width: 60px;
+    height: 60px;
+}
+
+.ele:hover {
+    background-color: #2d2d2d;
+    border: solid 5px #ffffff; 
+}
+
+.ele:focus {
+    outline: none;
+}
+
+.ele:disabled {
+    background-color: #2d2d2d;
+    border: solid 2px #ffffff;
+    cursor: default;
+}
+
+#ele_button12 {
+    border-top-left-radius: 8px;
+}
+
+#ele_button19 {
+    border-bottom-left-radius: 8px;
+}
+
+#ele_button82 {
+    border-top-right-radius: 8px;
+}
+
+#ele_button89 {
+    border-bottom-right-radius: 8px;
+}
+
+.ele_false {
+    background-color: #2d2d2d;
+    color: #2d2d2d;
+    border: solid 2px #2d2d2d;
+    cursor: default;
+    width: 60px;
+    height: 60px;
+}
+
+/* round pieces */
+.circle1 {
+    background-color: #ffffff;
+    border-radius: 50%;
+    margin: auto;
+    width: 35px;
+    height: 35px;
+}
+
+.circle2 {
+    background-color: #2d2d2d;
+    border-radius: 50%;
+    border: solid 4px #ffffff;
+    margin: auto;
+    width: 35px;
+    height: 35px;
+}

@@ -1,0 +1,2 @@
+# reversi
+ An online game.

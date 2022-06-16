@@ -1,0 +1,325 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="static/css/Semantic-UI-CSS-master/semantic.min.css">
+    <link rel="stylesheet" href="static/css/reversi_main.css">
+
+    <script src="static/lib/jquery.min.js"></script>
+    <script src="static/js/reversi_main.js"></script>
+    <script src="static/css/Semantic-UI-CSS-master/semantic.min.js"></script>
+	<title>Reversi</title>
+</head>
+
+
+<body>
+    <!-- welcome page -->
+    <div id="welcome" class="ui center aligned container">
+        <div id="top">
+            <h1 class="title" id="title_welcome_en">Reversi</h1>
+            <h1 class="title" id="title_welcome_cn">黑白棋</h1>
+        </div>
+        <div id="stage">
+            <div class="ui huge vertical buttons" id="welcome_buttons_en">                
+                <button class="ui inverted button" id="to_game_en">Start the game!</button>
+                <button class="ui inverted button" id="to_options_en">Options</button>
+                <button class="ui inverted button" id="to_rules_en">How to play</button>
+            </div>
+            <div class="ui huge vertical buttons" id="welcome_buttons_cn">                
+                <button class="ui inverted button" id="to_game_cn">开始游戏！</button>
+                <button class="ui inverted button" id="to_options_cn">选项</button>
+                <button class="ui inverted button" id="to_rules_cn">游戏规则</button>
+            </div>
+        </div>
+        <div id="bottom">
+            <!-- null -->
+        </div>
+    </div>
+    
+    <!-- options page -->
+    <div id="options" class="ui center aligned container">
+        <div id="top">
+            <h1 class="title" id="title_options_en">Reversi</h1>
+            <h1 class="title" id="title_options_cn">黑白棋</h1>
+            <h2 class="sub" id="sub_options_en">Options</h2>
+            <h2 class="sub" id="sub_options_cn">选项</h2>
+            <p class="des" id="des_options_en"><i>**Currently only local players mode is available.**</i></p>
+            <p class="des" id="des_options_cn"><i>**目前仅有本地模式**</i></p>
+        </div>
+        <div id="stage">
+            <div class="ui two large buttons" id="options_ai">
+                <button class="ui inverted button" id="ai_off_en">Local players</button>
+                <button class="ui inverted button" id="ai_off_cn">本地</button>
+                <div class="or"></div>
+                <button class="ui inverted button" id="ai_on">vs CPU</button>
+            </div>
+            
+            <div class="ui two large buttons" id="options_lan">
+                <button class="ui inverted button" id="en">English</button>
+                <div class="or"></div>
+                <button class="ui inverted button" id="cn">简体中文</button>
+            </div>
+        </div>
+        <div id="bottom">          
+            <button class="ui huge inverted button" id="options_to_welcome_en">OK</button>
+            <button class="ui huge inverted button" id="options_to_welcome_cn">确定</button>
+        </div>
+    </div>   
+    
+    <!-- rules page -->
+    <div id="rules" class="ui center aligned container">
+        <div id="top">
+            <h1 class="title" id="title_rules_en">Reversi</h1>
+            <h1 class="title" id="title_rules_cn">黑白棋</h1>
+            <h2 class="sub" id="sub_rules_en">Rules</h2>
+            <h2 class="sub" id="sub_rules_cn">游戏规则</h2>
+        </div>
+        <div id="stage">
+            <div id="ref_en">
+                <p><br>
+                    <i>see <a href=
+                    "https://www.mastersofgames.com/rules/reversi-othello-rules.htm">
+                    this page</a> for details
+                    </i>
+                </p>
+            </div>
+            <div id="ref_cn">
+                <p><br>
+                    <i>参考<a href=
+                    "https://www.mastersofgames.com/rules/reversi-othello-rules.htm">
+                    此页面</a>
+                    </i>
+                </p>
+            </div>
+
+            <div id="rules_en">
+                <ul>
+                    <li>Each piece played must be laid adjacent to an opponent's piece so that the opponent's piece or 
+                        a row of opponent's pieces is flanked by the new piece and another piece of the player's colour. 
+                        All of the opponent's pieces between these two pieces are 'captured' and turned over to match 
+                        the player's colour.                    
+                    </li>
+                    <li>It can happen that a piece is played so that pieces or rows of pieces in more than one direction 
+                        are trapped between the new piece played and other pieces of the same colour. 
+                        In this case, all the pieces in all viable directions are turned over.
+                    </li>
+                    <li>A player without a move simply passes, and the other player keeps playing pieces 
+                        until the first player can make a move again.
+                    </li>                      
+                    <li>
+                        The game is over when neither player has a legal move 
+                        (i.e. a move that captures at least one opposing piece) or when the board is full. 
+                        The player who has more pieces wins.                   
+                    </li>
+                </ul>
+            </div>
+
+            <div id="rules_cn">
+                <ul>
+                    <li>每枚棋子必须放在与对手棋子相邻的位置，使得一枚或一行对手棋子被夹在该棋子与另一枚相同颜色棋子中间。
+                        这两枚棋子中间的所有对手棋子都会被“翻转”（变为自己棋子的颜色）。
+                    </li>
+                    <li>有时，一枚棋子可以有多个方向存在可以“翻转”的对手棋子。
+                        此时，所有可行方向的所有棋子都会被“翻转”。
+                    </li>
+                    <li>当一名玩家没有可选择的格子放置棋子时，跳过，由另一名玩家放置棋子，
+                        直至之前的玩家有可选择的格子放置棋子。
+                    </li>                      
+                    <li>当双方玩家均没有可选择的格子放置棋子、或棋盘被放满棋子时，游戏结束。
+                        自己颜色的棋子数多的一方获胜。                  
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div id="bottom">          
+            <button class="ui huge inverted button" id="rules_to_welcome_en">Menu</button>
+            <button class="ui huge inverted button" id="rules_to_welcome_cn">回到菜单</button>
+        </div>
+    </div>
+
+    <!-- game start -->
+    <div id="game" class="ui container">
+        <div id="top">
+            <h1 class="title" id="title_game_en">Reversi</h1>
+            <h1 class="title" id="title_game_cn">黑白棋</h1>
+        </div>
+        <div id="stage">
+            
+            <div class="ui middle aligned ten column centered padded grid" id="game_ground">
+                <h2 id="player">Player 1: </h2>
+                <div class="stretched row">
+                    <div class="column">
+                        <button id="ele_button1" class="ele_false"></button>
+                        <button id="ele_button2" class="ele_false"></button>
+                        <button id="ele_button3" class="ele_false"></button>
+                        <button id="ele_button4" class="ele_false"></button>
+                        <button id="ele_button5" class="ele_false"></button>
+                        <button id="ele_button6" class="ele_false"></button>
+                        <button id="ele_button7" class="ele_false"></button>
+                        <button id="ele_button8" class="ele_false"></button>
+                        <button id="ele_button9" class="ele_false"></button>
+                        <button id="ele_button10" class="ele_false"></button>
+                    </div>
+
+                    <div class="column">                        
+                        <button id="ele_button11" class="ele_false"></button>
+                        <button id="ele_button12" class="ele"></button>
+                        <button id="ele_button13" class="ele"></button>
+                        <button id="ele_button14" class="ele"></button>
+                        <button id="ele_button15" class="ele"></button>
+                        <button id="ele_button16" class="ele"></button>
+                        <button id="ele_button17" class="ele"></button>
+                        <button id="ele_button18" class="ele"></button>
+                        <button id="ele_button19" class="ele"></button>
+                        <button id="ele_button20" class="ele_false"></button>
+                    </div>
+                    
+                    <div class="column">
+                        <button id="ele_button21" class="ele_false"></button>
+                        <button id="ele_button22" class="ele"></button>
+                        <button id="ele_button23" class="ele"></button>
+                        <button id="ele_button24" class="ele"></button>
+                        <button id="ele_button25" class="ele"></button>
+                        <button id="ele_button26" class="ele"></button>
+                        <button id="ele_button27" class="ele"></button>
+                        <button id="ele_button28" class="ele"></button>
+                        <button id="ele_button29" class="ele"></button>
+                        <button id="ele_button30" class="ele_false"></button>
+                    </div>
+                    
+                    <div class="column">
+                        <button id="ele_button31" class="ele_false"></button>
+                        <button id="ele_button32" class="ele"></button>
+                        <button id="ele_button33" class="ele"></button>
+                        <button id="ele_button34" class="ele"></button>
+                        <button id="ele_button35" class="ele"></button>
+                        <button id="ele_button36" class="ele"></button>
+                        <button id="ele_button37" class="ele"></button>
+                        <button id="ele_button38" class="ele"></button>
+                        <button id="ele_button39" class="ele"></button>
+                        <button id="ele_button40" class="ele_false"></button>
+                    </div>
+                    
+                    <div class="column">
+                        <button id="ele_button41" class="ele_false"></button>
+                        <button id="ele_button42" class="ele"></button>
+                        <button id="ele_button43" class="ele"></button>
+                        <button id="ele_button44" class="ele"></button>
+                        <button id="ele_button45" class="ele">
+                            <div class="circle1"></div>
+                        </button>
+                        <button id="ele_button46" class="ele">
+                            <div class="circle2"></div>
+                        </button>
+                        <button id="ele_button47" class="ele"></button>
+                        <button id="ele_button48" class="ele"></button>
+                        <button id="ele_button49" class="ele"></button>
+                        <button id="ele_button50" class="ele_false"></button>
+                    </div>
+                    
+                    <div class="column">                        
+                        <button id="ele_button51" class="ele_false"></button>
+                        <button id="ele_button52" class="ele"></button>
+                        <button id="ele_button53" class="ele"></button>
+                        <button id="ele_button54" class="ele"></button>
+                        <button id="ele_button55" class="ele">
+                            <div class="circle2"></div>
+                        </button>
+                        <button id="ele_button56" class="ele">
+                            <div class="circle1"></div>
+                        </button>
+                        <button id="ele_button57" class="ele"></button>
+                        <button id="ele_button58" class="ele"></button>
+                        <button id="ele_button59" class="ele"></button>
+                        <button id="ele_button60" class="ele_false"></button>
+                    </div>
+                    
+                    <div class="column">
+                        <button id="ele_button61" class="ele_false"></button>
+                        <button id="ele_button62" class="ele"></button>
+                        <button id="ele_button63" class="ele"></button>
+                        <button id="ele_button64" class="ele"></button>
+                        <button id="ele_button65" class="ele"></button>
+                        <button id="ele_button66" class="ele"></button>
+                        <button id="ele_button67" class="ele"></button>
+                        <button id="ele_button68" class="ele"></button>
+                        <button id="ele_button69" class="ele"></button>
+                        <button id="ele_button70" class="ele_false"></button>
+                    </div>
+                    
+                    <div class="column">
+                        <button id="ele_button71" class="ele_false"></button>
+                        <button id="ele_button72" class="ele"></button>
+                        <button id="ele_button73" class="ele"></button>
+                        <button id="ele_button74" class="ele"></button>
+                        <button id="ele_button75" class="ele"></button>
+                        <button id="ele_button76" class="ele"></button>
+                        <button id="ele_button77" class="ele"></button>
+                        <button id="ele_button78" class="ele"></button>
+                        <button id="ele_button79" class="ele"></button>
+                        <button id="ele_button80" class="ele_false"></button>
+                    </div>
+                    
+                    <div class="column">
+                        <button id="ele_button81" class="ele_false"></button>
+                        <button id="ele_button82" class="ele"></button>
+                        <button id="ele_button83" class="ele"></button>
+                        <button id="ele_button84" class="ele"></button>
+                        <button id="ele_button85" class="ele"></button>
+                        <button id="ele_button86" class="ele"></button>
+                        <button id="ele_button87" class="ele"></button>
+                        <button id="ele_button88" class="ele"></button>
+                        <button id="ele_button89" class="ele"></button>
+                        <button id="ele_button90" class="ele_false"></button>
+                    </div>
+                    
+                    <div class="column">
+                        <button id="ele_button91" class="ele_false"></button>
+                        <button id="ele_button92" class="ele_false"></button>
+                        <button id="ele_button93" class="ele_false"></button>
+                        <button id="ele_button94" class="ele_false"></button>
+                        <button id="ele_button95" class="ele_false"></button>
+                        <button id="ele_button96" class="ele_false"></button>
+                        <button id="ele_button97" class="ele_false"></button>
+                        <button id="ele_button98" class="ele_false"></button>
+                        <button id="ele_button99" class="ele_false"></button>
+                        <button id="ele_button100" class="ele_false"></button>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <div id="bottom">
+
+        </div>
+    </div>
+
+    <!-- end page -->
+    <div id="end" class="ui center aligned container">
+        <div id="top">
+            <h1 class="title" id="title_end_en">Reversi</h1>
+            <h1 class="title" id="title_end_cn">黑白棋</h1>
+        </div>
+        <div id="stage">
+            <h2 id="who_wins">Player 1 wins!</h2>
+            <div class="ui middle aligned four column centered grid" id="results">
+                <div class="column">
+                    <div id="p1"></div>
+                </div>
+                <div class="column">
+                    <div id="p2"></div>
+                </div>
+            </div>
+        </div>
+        <div id="bottom">
+            <button class="ui inverted button" id="end_to_welcome_en">Menu</button>
+            <button class="ui inverted button" id="end_to_welcome_cn">回到菜单</button>
+        </div>
+    </div>
+
+
+</body>
+</html>
