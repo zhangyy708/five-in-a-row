@@ -15,6 +15,8 @@ h2 {
     padding-bottom: 0%;
     font-size: 30px;
     text-align: center;
+    vertical-align: top;
+    height: 15%;
 }
 
 #who_wins {
@@ -123,9 +125,12 @@ li {
 
 /* background cells */
 .ele {
-    background-color: #2d2d2d;
+    position: static;
+    background-color: rgba(0, 0, 0, 0);
     color: #ffffff;
-    border: solid 2px #ffffff;
+    /* border: solid 2px #ffffff; */
+    /* border-radius: 50%; */
+    border: 0px;
     cursor: pointer;
     transition-duration: 0s;
     vertical-align: middle;
@@ -134,45 +139,30 @@ li {
     height: 60px;
 }
 
-.ele:hover {
-    background-color: #2d2d2d;
-    border: solid 5px #ffffff; 
+#game_ground {
+    position: relative;
 }
 
-.ele:focus {
-    outline: none;
+/* horizontal lines*/
+.hori-line {   
+    position: absolute;  
+    width: 74.7%;
+    height: 1px;
+    margin-left: 28px;
+    border-top: solid 2px #ffffff;
+    text-align: center;
 }
 
-.ele:disabled {
-    background-color: #2d2d2d;
-    border: solid 2px #ffffff;
-    cursor: default;
+/*vertical lines*/
+.vert-line { 
+    position: absolute;   
+    width: 1px;
+    height: 90.5%;
+    margin-top: 30px;
+    border-right: solid 2px #ffffff;
+    text-align: center;
 }
 
-#ele_button12 {
-    border-top-left-radius: 8px;
-}
-
-#ele_button19 {
-    border-bottom-left-radius: 8px;
-}
-
-#ele_button82 {
-    border-top-right-radius: 8px;
-}
-
-#ele_button89 {
-    border-bottom-right-radius: 8px;
-}
-
-.ele_false {
-    background-color: #2d2d2d;
-    color: #2d2d2d;
-    border: solid 2px #2d2d2d;
-    cursor: default;
-    width: 60px;
-    height: 60px;
-}
 
 /* round pieces */
 .circle1 {
@@ -186,7 +176,7 @@ li {
 .circle2 {
     background-color: #2d2d2d;
     border-radius: 50%;
-    border: solid 4px #ffffff;
+    border: solid 2px #ffffff;
     margin: auto;
     width: 35px;
     height: 35px;
